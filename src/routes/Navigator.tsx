@@ -2,8 +2,11 @@ import React from 'react';
 
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {createStackNavigator} from '@react-navigation/stack';
-import {LoginScreen} from '../screens';
-import {SearchCompanyScreen} from '../screens/SearchCompanyScreen';
+import {
+  LoginScreen,
+  SearchCompanyScreen,
+  MonthlyReportScreen,
+} from '../screens';
 
 const Stack = createStackNavigator();
 
@@ -17,8 +20,15 @@ export const Navigator = () => {
             backgroundColor: 'white',
           },
         }}>
-        <Stack.Screen name="Welcome" component={LoginScreen} />
-        <Stack.Screen name="NavigatorUser" component={SearchCompanyScreen} />
+        <Stack.Screen name="LoginScreen" component={LoginScreen} />
+        <Stack.Screen
+          name="MonthlyReportScreen"
+          component={MonthlyReportScreen}
+        />
+        <Stack.Screen
+          name="SearchCompanyScreen"
+          component={SearchCompanyScreen}
+        />
       </Stack.Navigator>
     </SafeAreaProvider>
   );
